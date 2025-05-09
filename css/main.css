@@ -1,0 +1,7 @@
+.text {
+    width:100vw;
+    margin:auto;
+    background:red;
+    /* max-width:1200px; */
+    height:500px;
+}

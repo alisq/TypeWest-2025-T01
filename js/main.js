@@ -1,0 +1,1 @@
+setTimeout(function(){$('.text').boxfit();},500);
