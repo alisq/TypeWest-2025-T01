@@ -6,6 +6,10 @@
     padding:0;
 }
 
+
+html, body {
+    font-family:arial, helvetica;
+}
 @font-face {
     font-family: "Zeitpunkt";
     src: url("/fonts/Zeitpunkt-Light.woff2") format('woff2');
@@ -31,6 +35,7 @@
     height: 250px;
     text-align:center;
     border-bottom:1px solid #000;
+    overflow: hidden;;
   }
   
   .text {
@@ -70,6 +75,6 @@
 
   
 
-  #alisqadeer {
+  #alisqadeer .text {
 font-family:"Zeitpunkt"
   }
