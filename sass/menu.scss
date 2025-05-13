@@ -1,0 +1,79 @@
+@import 'vars';
+
+// .menu {
+//     // position: absolute;
+//     top: 0;
+//     right: 0;
+//     background: white;
+//     width: 200px;
+//     padding: 1em;
+//     display: none;
+//   }
+  
+//   .menu[open],
+//   .menu:not([hidden]) {
+//     display: block;
+//   }
+  
+//   .menu-toggle {
+//     background: none;
+//     border: none;
+//     font-size: 2rem;
+//   }
+  
+  .visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  #menu {
+    display:none;
+  }
+
+  #hamburger-toggle {
+    background:transparent;
+    border:0;
+    font-size:20px;
+    // padding:0 0.25em;
+    cursor:pointer;
+
+    &::after {
+        content: '☰';
+        position:relative;
+        
+    }
+
+    .active &::after {
+        
+        
+        top:3px;
+        content: "×";
+    }
+
+    
+
+  }
+
+  #revivals_menu {
+    background:rgba($red, 0.9);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:100vh;
+    z-index:101;
+    display:none;
+    opacity:0;
+    transition:all 0.3s;
+
+    &.active {
+        display: block;;
+        opacity:1
+    }
+
+  }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Zeitpunkt";
   src: url("../fonts/Zeitpunkt-Light.woff2") format("woff2");
@@ -12,6 +13,52 @@
 
 #michelleghiotti .text {
   font-family: "Cadmea";
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#menu {
+  display: none;
+}
+
+#hamburger-toggle {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+#hamburger-toggle::after {
+  content: "☰";
+  position: relative;
+}
+.active #hamburger-toggle::after {
+  top: 3px;
+  content: "×";
+}
+
+#revivals_menu {
+  background: rgba(255, 28, 23, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 101;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+#revivals_menu.active {
+  display: block;
+  opacity: 1;
 }
 
 *,
@@ -50,7 +97,7 @@ h1, h2, h3, h4, h5 {
   text-align: right;
 }
 
-#menu {
+#header {
   padding: 1em;
   display: grid;
   border-bottom: 1px solid #000;

@@ -1,4 +1,6 @@
+@use 'vars';
 @use 'fonts';
+@use 'menu';
 
 *,
 *::after,
@@ -41,7 +43,7 @@ h1, h2, h3, h4, h5 {
     text-align:right;
   }
 
-#menu {
+#header {
     padding:1em;
     display:grid;
     // height:50px;

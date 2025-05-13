@@ -26,3 +26,16 @@ function fitter() {
 //     $(document).keypress(fitter);
 //   });
   
+
+$("#menu_button").click(function(){
+    
+    
+    $(this).toggleClass("active")
+    $("#revivals_menu").toggleClass("active")
+})
+
+
+$("#revivals_menu").click(function(){
+    $(this).removeClass("active")
+    $("#menu_button").toggleClass("active")
+})
