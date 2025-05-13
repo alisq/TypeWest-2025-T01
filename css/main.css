@@ -6,6 +6,14 @@
   font-family: "Cadmea";
   src: url("../fonts/cadmea_0511_Regular.woff2") format("woff2");
 }
+#alisqadeer .text {
+  font-family: "Zeitpunkt";
+}
+
+#michelleghiotti .text {
+  font-family: "Cadmea";
+}
+
 *,
 *::after,
 *::before {
@@ -62,7 +70,7 @@ section.font {
   overflow: hidden;
 }
 .container .text {
-  font-size: 14px;
+  font-size: 120px;
   display: inline-block;
   position: relative;
   top: 50%;
@@ -79,7 +87,7 @@ section.font {
   z-index: 5;
 }
 
-.viewproject {
+.view_project {
   position: absolute;
   top: 1em;
   right: 1em;
@@ -91,17 +99,9 @@ section.font {
   color: #FFF;
   transition: color 0.3s, background 0.3s;
 }
-.viewproject:hover {
+.view_project:hover {
   color: #FF1C17;
   background-color: #FFF;
-}
-
-#alisqadeer .text {
-  font-family: "Zeitpunkt";
-}
-
-#michelleghiotti .text {
-  font-family: "Cadmea";
 }
 
 /*# sourceMappingURL=main.css.map */

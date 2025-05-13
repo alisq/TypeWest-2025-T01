@@ -65,7 +65,7 @@ section.font {
   
   
   .text {   
-    font-size: 14px;
+    font-size: 120px;
     display:inline-block;
     position:relative;
     top:50%;
@@ -83,7 +83,7 @@ section.font {
     
     
   }
-  .viewproject {
+  .view_project {
     position:absolute;
     top:1em; right:1em;
     z-index:100;
@@ -100,11 +100,3 @@ section.font {
     }
   }
   
-
-  #alisqadeer .text {
-    font-family:"Zeitpunkt"
-  }
-
-  #michelleghiotti .text {
-    font-family:"Cadmea"
-  }

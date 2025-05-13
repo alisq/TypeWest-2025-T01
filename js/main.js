@@ -20,9 +20,9 @@ function fitter() {
     });
   }
   
-  $(document).ready(function () {
-    fitter();
-    $(window).resize(fitter);
-    $(document).keypress(fitter);
-  });
+//   $(document).ready(function () {
+//     fitter();
+//     $(window).resize(fitter);
+//     $(document).keypress(fitter);
+//   });
   
