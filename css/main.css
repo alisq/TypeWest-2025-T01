@@ -6,11 +6,23 @@
     padding:0;
 }
 
+@font-face {
+    font-family: "Zeitpunkt";
+    src: url("/fonts/Zeitpunkt-Light.woff2") format('woff2');
+}
+
 /* Make selected text gold on a red background */
 ::selection {
     color: white;
     background-color: #FF1C17;
   }
+
+#menu {
+    display:grid;
+    height:50px;
+    border-bottom:1px solid #000;
+}
+
 .container {
     position:relative;
     /* display:flex; */
@@ -23,15 +35,11 @@
   
   .text {
     
-    font-weight: 800;
     font-size: 14px;
-    background: rgba(yellow, 0.25);
-    text-align:center;
     display:inline-block;
     position:relative;
     top:50%;
     transform:translateY(-50%);
-    
     outline: none;
     white-space: nowrap;
   }
@@ -61,3 +69,7 @@
   }
 
   
+
+  #alisqadeer {
+font-family:"Zeitpunkt"
+  }
