@@ -19,6 +19,10 @@ function fitter() {
       $text.css("font-size", newSize + "px");
     });
   }
+
+
+
+  
   
 //   $(document).ready(function () {
 //     fitter();
@@ -39,3 +43,38 @@ $("#revivals_menu").click(function(){
     $(this).removeClass("active")
     $("#menu_button").toggleClass("active")
 })
+
+
+
+
+
+
+  
+  url = 'https://tw2025.iamasq.works/api/content/items/Revival';
+fetch(url)
+  .then(response => response.json())
+  .then(p => {
+
+    
+    
+    
+//p.splice(1,1)
+//p.splice(2,1)
+
+for(i=0;i<p.length;i++) {
+  p[i].identity = i;
+  
+  
+
+
+  let item = new Typeface(p[i]);
+  $("#all_fonts").append(item.displayFile)
+  $("#menu_fonts").append(item.displayMenu)
+
+  //CREATE CREATE ITEM FOR BOOK MENU
+  $("body").append(item.displayTeaser+"<br />")
+
+
+  
+}
+  })
