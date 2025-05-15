@@ -1,25 +1,6 @@
 @import 'vars';
 
-// .menu {
-//     // position: absolute;
-//     top: 0;
-//     right: 0;
-//     background: white;
-//     width: 200px;
-//     padding: 1em;
-//     display: none;
-//   }
-  
-//   .menu[open],
-//   .menu:not([hidden]) {
-//     display: block;
-//   }
-  
-//   .menu-toggle {
-//     background: none;
-//     border: none;
-//     font-size: 2rem;
-//   }
+
   
   .visually-hidden {
     position: absolute;
@@ -71,9 +52,32 @@
     opacity:0;
     transition:all 0.3s;
 
+        & p, & h2 {
+        color:white;
+      }
+
     &.active {
         display: block;;
         opacity:1
+    }
+
+    & .header {
+      border-color:white;
+      color:white;
+
+  
+
+      & a {
+        color:white;
+
+        &:link,
+        &:visited {
+          color:white;
+        }
+        &:hover {
+          color:black;
+        }
+      }
     }
 
   }

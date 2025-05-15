@@ -2,34 +2,68 @@ class Typeface {
     constructor(content) {
         //console.log(content)
         this.title = content['Revival Name'];
-        this.font_file = content['WOFF file'];
-        console.log(this.font_file)
+        this.font_file = content['WOFF file'].path;
+        
+        
         this.author = content['Student Name'];
         this.authorID = content['Student Name'].toLowerCase().replace(/[^a-z]/g, '');
-        // this.identity = content.identity;
-        // this.contents = content.field_article_contents.replaceAll("/sites/default/files","https://tba.codepanel.in/sites/default/files");;
-        // this.editorial_author = content.field_intro_text_author;
-        // this.editorial_illustration = content.field_editorial_image;
-        // this.editorial = content.field_editorial;
-        // this.artists = content.field_artist_s_;
-        // this.title = content.title;
-        // this.bio = content.body;
-        // this.audio = content.field_audio_files.split(", ");
-        // this.image = content.field_image.replaceAll("/sites/default/files","https://tba.codepanel.in/sites/default/files");
-        // this.image_caption = $(this.image).attr('alt');
-        // if (this.image_caption == undefined) {
-        //     this.image_caption="";
-        // }
-        // this.bookSafeContents = this.contents.replaceAll('<iframe id="lostRiversMap" src="lostRiversMap.html" title="Lost Rivers Map"></iframe>',"").replaceAll('<iframe id="taguibaoMap" scrolling="no" src="taguibaoMap.html" title="Caitlyn Taguibao Interactive Mural"></iframe>',"")
         
-      
+        this.font_desc = content['Revival Description']
+        this.author_desc = content['Biography']
+        this.author_sites = function() {
+            let s = "<ul class='external-links'>";
+            if (content['External Website'] && Array.isArray(content['External Website'])) {
+                for (let i = 0; i < content['External Website'].length; i++) {
+                    s += "<li><a class='inverse' target='_blank' href='" + content['External Website'][i] + "'>" + content['External Website'][i] + "↗</a></li>";
+                }
+            }
+            s += "</ul>";
+            return s;
+        };
+
+        this.texter_text = content['Tester Text'];
+
+        this.process_images = function() {
+            let s = "";
+            if (content['Process Images'] && Array.isArray(content['Process Images'])) {
+                for (let i = 0; i < content['Process Images'].length; i++) {
+                    s += `
+                    <div class="image">
+                        <img src='https://tw2025.iamasq.works/storage/uploads${content['Process Images'][i]['path']}' alt='${content['Process Images'][i]['altText']}'>
+                        <div class="caption">${content['Process Images'][i]['description']}</div>
+                    </div>`
+                }
+            }
+            
+            return s;
+        } 
+
+        this.source_desc = content['Source Info'];
+        this.process_desc = content['Process Info'];
+        
+        this.research_images = function() {
+            let s = "";
+            if (content['Research Images'] && Array.isArray(content['Research Images'])) {
+                for (let i = 0; i < content['Research Images'].length; i++) {
+                    s += `
+                    <div class="image">
+                        <img src='https://tw2025.iamasq.works/storage/uploads${content['Research Images'][i]['path']}' alt='${content['Research Images'][i]['altText']}'>
+                        <div class="caption">${content['Research Images'][i]['description']}</div>
+                    </div>`
+                }
+            }
+            
+            return s;
+        } 
+        console.log(this.research_images())
+       
     }
 
     get displayFile() {
         let item = `
         @font-face {
             font-family: "${this.title}";
-            src: url("https://tw2025.iamasq.works/${this.font_file}") format('woff2');
+            src: url("https://tw2025.iamasq.works/storage/uploads${this.font_file}") format('woff2');
         }
 
         #${this.authorID} .text, h3.${this.authorID}  { font-family:"${this.title}" }`
@@ -38,8 +72,11 @@ class Typeface {
 
     get displayMenu() {
         let item = `
-        <h3 class="${this.authorID}">${this.title}</h3>
-        <div>by ${this.author}</div>`
+        <a class="internal" href="#${this.authorID}">
+            <h2 class="center">${this.title}</h3>
+            <p class="center">by ${this.author}</p>
+        </a>`
+            
         return item;
     }
 
@@ -51,11 +88,10 @@ class Typeface {
             <div class="metadata">                 
                 <label class="font_name">${this.title}</label> by <label class="designer_name">${this.author}</label>
             </div>
-            <button class="view_project">                 
-                see full project
-            </button>
 
-            <div class="container" >
+            <a class='internal' href="#${this.authorID}"><button class="view_project">See full project</button></a>
+
+            <div class="contain-overflow" >
             
         
                 <div class="text" contenteditable style="">
@@ -74,22 +110,58 @@ class Typeface {
 
                 /* html */
         let item = `
-        <section class="font" id="${this.authorID}">
-            <div class="metadata">                 
-                <label class="font_name">${this.title}</label> by <label class="designer_name">${this.author}</label>
-            </div>
-            <button class="view_project">                 
-                see full project
-            </button>
-
-            <div class="container" >
+        <section class="font_full" id="${this.authorID}">
             
-        
-                <div class="text" contenteditable style="">
-                    Sixty zippers were quickly picked from the woven jute bag
+        <div class="container">
+                <h2 >
+                    ${this.title}
+                </h2>
+                
+                 <div class="row">
+                    <div class="one-half column">
+                        <h3>About ${this.title}</h3>
+                        
+                        ${this.font_desc}
+                        
+                    </div>
+    
+                    <div class="one-half column">
+                        <h3>About ${this.author}</h3>                        
+                            ${this.author_desc}
+                            ${this.author_sites()}                    
+                    </div>
                 </div>
-        
+            </div>    
+            
+                
+            <div class="tester_text" contenteditable>
+                ${this.texter_text}
             </div>
+            
+            
+            <div class=process-images">    
+                ${this.process_images()}
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="one-half column">
+                        <h3>About the source</h3>
+                        ${this.source_desc}                        
+                    </div>
+                    <div class="one-half column">
+                        <h3>About the process</h3>
+                        ${this.process_desc}
+                    </div>                 
+                </div>
+            </div>
+
+                <div class=process-images">    
+                    ${this.research_images()}
+                </div>
+
+                <button>previous project</button>
+                <button>next project</button>
         </section>`;
         return item;
     }

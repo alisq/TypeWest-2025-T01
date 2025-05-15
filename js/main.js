@@ -1,35 +1,50 @@
-function fitter() {
-    $(".container").each(function () {
-      const $container = $(this);
-      const $text = $container.find(".text");
-  
-      // Temporarily reset font size to base
-      $text.css("font-size", "14px");
-  
-      const tW = $text.width();
-      const cW = $container.width()-40;
-      const ratio = cW / tW;
-  
-      let newSize = 14 * ratio;
-  
-      if (newSize > 250) {
-        newSize = 250;
-      }
-  
-      $text.css("font-size", newSize + "px");
-    });
-  }
+    const fadeSpeed = 150;
+    let fonts = [];
+    const url = 'https://tw2025.iamasq.works/api/content/items/Revival';
 
+    fetch(url)
+      .then(response => response.json())
+      .then(p => {
+        for(i=0;i<p.length;i++) {
+          p[i].identity = i;
+          p[i].authorID = p[i]["Student Name"].toLowerCase().replace(" ","").replace(/[^a-z]/g);
 
+        fonts[i] = p[i]
+        
+        }
+      })
+    
 
-  
-  
-//   $(document).ready(function () {
-//     fitter();
-//     $(window).resize(fitter);
-//     $(document).keypress(fitter);
-//   });
-  
+      
+    
+      setTimeout(function(){
+
+        //load the meny at the outset.
+        for (i=0;i<fonts.length;i++) {
+              let item = new Typeface(fonts[i]);
+            $("#revivals_menu").append(item.displayMenu)
+          }
+
+        
+        if  (window.location.hash) {
+            aID = window.location.hash.replace("#","");
+            loadFont(aID)
+            
+        } else {
+          // console.log(JSON.stringify(fonts))
+          for (i=0;i<fonts.length;i++) {
+              let item = new Typeface(fonts[i]);
+            $("#all_fonts").append(item.displayFile)
+          }
+
+        
+          loadHome()
+        
+        }
+        }, 200)
+
+        
+    
 
 $("#menu_button").click(function(){
     
@@ -49,32 +64,58 @@ $("#revivals_menu").click(function(){
 
 
 
-  
-  url = 'https://tw2025.iamasq.works/api/content/items/Revival';
-fetch(url)
-  .then(response => response.json())
-  .then(p => {
-
-    
-    
-    
-//p.splice(1,1)
-//p.splice(2,1)
-
-for(i=0;i<p.length;i++) {
-  p[i].identity = i;
-  
-  
 
 
-  let item = new Typeface(p[i]);
-  $("#all_fonts").append(item.displayFile)
-  $("#menu_fonts").append(item.displayMenu)
 
-  //CREATE CREATE ITEM FOR BOOK MENU
-  $("body").append(item.displayTeaser+"<br />")
-
-
-  
-}
+  $("a.loadHome").click(function(){
+    window.location.hash="";
+    loadHome();
   })
+
+
+
+  
+
+  $(document).on('click','.internal',function(e){
+      // e.preventDefault();
+
+      $("#contents").fadeOut(fadeSpeed);
+      q = $(this).attr("href").replace("#","");
+      console.log(q)
+      loadFont(q)
+
+  })
+
+
+  
+  function loadHome() {
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+    $("#contents").fadeOut(fadeSpeed)
+    $("#contents").html("");
+
+    for (i=0;i<fonts.length;i++ ) {
+      let item = new Typeface(fonts[i]);
+      setTimeout(function(){
+        $("#contents").append(item.displayTeaser+"<br />").fadeIn(100)
+      }, fadeSpeed)
+    }
+    
+
+  }
+
+
+
+
+function loadFont(authorID) {
+  console.log(fonts)
+  // /const result = fonts.find(entry => entry.authorID === authorID);
+  const result = fonts.find(entry => entry.authorID === authorID);
+
+  let item = new Typeface(result);
+  $("#contents").fadeOut(fadeSpeed);
+  setTimeout(function(){
+    $("#contents").html("");
+    $("#contents").append(item.displayFull+"<br />").fadeIn(100)
+    $("#contents").fadeIn(100);
+  },100);
+}
