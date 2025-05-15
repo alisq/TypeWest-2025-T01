@@ -1,8 +1,8 @@
 class Typeface {
     constructor(content) {
-        //console.log(content)
+        this.homepage_test_text = content['Homepage Tester Text'];
         this.title = content['Revival Name'];
-        this.font_file = content['WOFF file'].path;
+        this.font_file = content['WOFF file'].path.split("/")[4];
         
         
         this.author = content['Student Name'];
@@ -55,7 +55,7 @@ class Typeface {
             
             return s;
         } 
-        console.log(this.research_images())
+        
        
     }
 
@@ -63,10 +63,14 @@ class Typeface {
         let item = `
         @font-face {
             font-family: "${this.title}";
-            src: url("https://tw2025.iamasq.works/storage/uploads${this.font_file}") format('woff2');
+            src: url("../fonts/${this.font_file}") format('woff2');
         }
 
-        #${this.authorID} .text, h3.${this.authorID}  { font-family:"${this.title}" }`
+        #${this.authorID} .text, 
+        #${this.authorID} .tester_text,
+        #${this.authorID} h2, 
+        h3.${this.authorID}  
+        { font-family:"${this.title}" }`
         return item;
     }
 
@@ -95,7 +99,7 @@ class Typeface {
             
         
                 <div class="text" contenteditable style="">
-                    Sixty zippers were quickly picked from the woven jute bag
+                    ${this.homepage_test_text}
                 </div>
         
             </div>
@@ -160,8 +164,16 @@ class Typeface {
                     ${this.research_images()}
                 </div>
 
-                <button>previous project</button>
-                <button>next project</button>
+
+                <div class="back_forth">
+                    <div>
+                        <a href="" id="prev_button" class="internal"><button>previous project</button></a>
+                    </div>
+                    <div class="right">
+                        <a href="" id="next_button" class="internal"><button>next project</button></a>
+                    </div>
+                </div>
+                
         </section>`;
         return item;
     }

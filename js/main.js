@@ -31,7 +31,7 @@
             loadFont(aID)
             
         } else {
-          // console.log(JSON.stringify(fonts))
+          
           for (i=0;i<fonts.length;i++) {
               let item = new Typeface(fonts[i]);
             $("#all_fonts").append(item.displayFile)
@@ -41,7 +41,7 @@
           loadHome()
         
         }
-        }, 200)
+        }, 300)
 
         
     
@@ -117,5 +117,13 @@ function loadFont(authorID) {
     $("#contents").html("");
     $("#contents").append(item.displayFull+"<br />").fadeIn(100)
     $("#contents").fadeIn(100);
+
+    let prev, next;
+
+    result.identity == 0 ? prev = "#"+fonts[fonts.length-1].authorID : prev = "#"+fonts[result.identity-1].authorID
+    result.identity == fonts.length-1 ? next = "#"+fonts[0].authorID : next = "#"+fonts[result.identity+1].authorID
+    $("#next_button").attr("href",next)
+    $("#prev_button").attr("href",prev)
+    
   },100);
 }

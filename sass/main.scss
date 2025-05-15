@@ -209,3 +209,9 @@ p {
     text-align:center;
     
   }
+
+  .back_forth {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding:1em;
+  }
