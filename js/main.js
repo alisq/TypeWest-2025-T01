@@ -18,7 +18,7 @@
 
       
     
-      setTimeout(function(){
+      setTimeout(function(){ //remove this timeout function when the data is built in.
 
         //load the meny at the outset.
         for (i=0;i<fonts.length;i++) {
@@ -43,7 +43,7 @@
           loadHome()
         
         }
-        }, 300)
+        }, 600)
 
         
     
