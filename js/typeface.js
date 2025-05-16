@@ -63,7 +63,7 @@ class Typeface {
         let item = `
         @font-face {
             font-family: "${this.title}";
-            src: url("../fonts/${this.font_file}") format('woff2');
+            src: url("fonts/${this.font_file}") format('woff2');
         }
 
         #${this.authorID} .text, 
