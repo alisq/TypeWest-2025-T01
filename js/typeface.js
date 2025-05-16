@@ -6,7 +6,7 @@ class Typeface {
         
         
         this.author = content['Student Name'];
-        this.authorID = content['Student Name'].toLowerCase().replace(/[^a-z]/g, '');
+        this.authorID = content['authorID'];
         
         this.font_desc = content['Revival Description']
         this.author_desc = content['Biography']
