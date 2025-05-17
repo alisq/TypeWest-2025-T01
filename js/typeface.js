@@ -66,10 +66,8 @@ class Typeface {
             src: url("fonts/${this.font_file}") format('woff2');
         }
 
-        #${this.authorID} .text, 
-        #${this.authorID} .tester_text,
-        #${this.authorID} h2, 
-        h3.${this.authorID}  
+
+        .${this.authorID}  
         { font-family:"${this.title}" }`
         return item;
     }
@@ -77,7 +75,7 @@ class Typeface {
     get displayMenu() {
         let item = `
         <a class="internal" href="#${this.authorID}">
-            <h2 class="center">${this.title}</h3>
+            <h2 class="center ${this.authorID}">${this.title}</h3>
             <p class="center">by ${this.author}</p>
         </a>`
             
@@ -98,7 +96,7 @@ class Typeface {
             <div class="contain-overflow" >
             
         
-                <div class="text" contenteditable style="">
+                <div class="text ${this.authorID}" contenteditable style="">
                     ${this.homepage_test_text}
                 </div>
         
@@ -117,7 +115,7 @@ class Typeface {
         <section class="font_full" id="${this.authorID}">
             
         <div class="container">
-                <h2 >
+                <h2 class="${this.authorID}">
                     ${this.title}
                 </h2>
                 
@@ -138,7 +136,7 @@ class Typeface {
             </div>    
             
                 
-            <div class="tester_text" contenteditable>
+            <div class="tester_text ${this.authorID}" contenteditable>
                 ${this.texter_text}
             </div>
             

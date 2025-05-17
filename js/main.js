@@ -18,12 +18,19 @@
 
       
     
+
       setTimeout(function(){ //remove this timeout function when the data is built in.
 
-        //load the meny at the outset.
+
+        
+
+
+
+        //load the menu and the conts at the outset.
         for (i=0;i<fonts.length;i++) {
               let item = new Typeface(fonts[i]);
             $("#revivals_menu").append(item.displayMenu)
+                      $("#all_fonts").append(item.displayFile)
           }
 
         
@@ -36,7 +43,7 @@
           for (i=0;i<fonts.length;i++) {
               let item = new Typeface(fonts[i]);
               
-            $("#all_fonts").append(item.displayFile)
+            
           }
 
         
