@@ -109,11 +109,11 @@ a.inverse:hover {
 
 html, body {
   font-family: "Duplicate", arial, helvetica;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 h1, h2, h3, h4, h5 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   letter-spacing: 0;
   padding: 0;
@@ -150,30 +150,36 @@ h3 {
 .header {
   padding: 1em;
   display: grid;
-  border-bottom: 1px solid #000;
+  height: 80px;
+  border-bottom: 1px solid #FF1C17;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.header #menu_button {
+  cursor: pointer;
+}
+.header #menu_button:hover {
+  color: #FF1C17;
 }
 
 section.font {
   position: relative;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #FF1C17;
   overflow: hidden;
 }
 
 .contain-overflow {
   width: 100%;
-  height: 250px;
   overflow: hidden;
+  height: 300px;
 }
 .contain-overflow .text {
   font-size: 120px;
   display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   outline: none;
   white-space: nowrap;
+  text-align: center;
+  padding: 0.6em 0 0.2em;
 }
 
 .tester_text {
@@ -198,6 +204,7 @@ section.font {
 }
 
 button {
+  border-radius: 0;
   font-size: inherit;
   font-weight: normal;
   line-height: inherit;

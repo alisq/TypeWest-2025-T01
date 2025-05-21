@@ -40,12 +40,12 @@ color:$red;
 
 html, body {
     font-family:"Duplicate", arial, helvetica;
-    font-size:16px;
+    font-size:20px;
 }
 
 
 h1, h2, h3, h4, h5 {
-    font-size:16px;
+    font-size:20px;
     font-weight:normal;
     letter-spacing:0;
     padding:0;
@@ -83,35 +83,45 @@ h3 {
 .header {
     padding:1em;
     display:grid;
-    // height:50px;
-    border-bottom:1px solid #000;
-    // text-align:center;
+    height:80px;
+    border-bottom:1px solid $red;
+    
     grid-template-columns: 1fr 1fr 1fr;
+    
+    & #menu_button {
+      cursor:pointer;
+
+      &:hover  {
+      color:$red;
+    }
+    }
+
+    
 }
 
 section.font {
     position:relative;
     
     text-align:center;
-    border-bottom:1px solid #000;
+    border-bottom:1px solid $red;
     overflow: hidden;
 }
 
 .contain-overflow {
     width: 100%;
-    height: 250px;
+    // height: 250px;
     overflow: hidden;
+    height:300px;
   
   
-  .text {   
-    font-size: 120px;
-    display:inline-block;
-    position:relative;
-    top:50%;
-    transform:translateY(-50%);
-    outline: none;
-    white-space: nowrap;
-  }
+    .text {   
+      font-size: 120px;
+      display: inline-block;
+      outline: none;
+      white-space: nowrap;
+        text-align: center;
+      padding: 0.6em 0 0.2em;
+    }
 }
 
   .tester_text {   
@@ -141,6 +151,7 @@ section.font {
   button {
 
     // text-align: center;
+    border-radius:0;
   font-size: inherit;
   font-weight: normal;
   line-height: inherit;
