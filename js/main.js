@@ -64,8 +64,13 @@ $("#menu_button").click(function(){
 
 
 $("#revivals_menu").click(function(){
-    $(this).removeClass("active")
+    
     $("#menu_button").toggleClass("active")
+    $(this).fadeOut(fadeSpeed);
+    setTimeout(function(){
+      $("#revivals_menu").removeClass("active").attr("style","");
+
+    },fadeSpeed)
 })
 
 
@@ -90,7 +95,7 @@ $("#revivals_menu").click(function(){
 
       $("#contents").fadeOut(fadeSpeed);
       q = $(this).attr("href").replace("#","");
-      console.log(q)
+
       loadFont(q)
 
   })

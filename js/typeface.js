@@ -74,10 +74,12 @@ class Typeface {
 
     get displayMenu() {
         let item = `
-        <a class="internal" href="#${this.authorID}">
-            <h2 class="center ${this.authorID}">${this.title}</h3>
-            <p class="center">by ${this.author}</p>
-        </a>`
+        <li>
+            <a class="internal" href="#${this.authorID}">
+                <h3 class="center ${this.authorID}">${this.title}</h3>
+                <p class="center">by ${this.author}</p>
+            </a>
+        </li>`
             
         return item;
     }
@@ -88,7 +90,7 @@ class Typeface {
         let item = `
         <section class="font" id="${this.authorID}">
             <div class="metadata">                 
-                <label class="font_name">${this.title}</label> by <label class="designer_name">${this.author}</label>
+                <a class='internal' href="#${this.authorID}"><label class="font_name">${this.title}</label> by <label class="designer_name">${this.author}</label></a>
             </div>
 
             <a class='internal' href="#${this.authorID}"><button class="view_project">See full project</button></a>
@@ -121,14 +123,14 @@ class Typeface {
                 
                  <div class="row">
                     <div class="one-half column">
-                        <h3>About ${this.title}</h3>
+                        <h4>About ${this.title}</h4>
                         
                         ${this.font_desc}
                         
                     </div>
     
                     <div class="one-half column">
-                        <h3>About ${this.author}</h3>                        
+                        <h4>About ${this.author}</h4>                        
                             ${this.author_desc}
                             ${this.author_sites()}                    
                     </div>
@@ -148,11 +150,11 @@ class Typeface {
             <div class="container">
                 <div class="row">
                     <div class="one-half column">
-                        <h3>About the source</h3>
+                        <h4>About the source</h4>
                         ${this.source_desc}                        
                     </div>
                     <div class="one-half column">
-                        <h3>About the process</h3>
+                        <h4>About the process</h4>
                         ${this.process_desc}
                     </div>                 
                 </div>

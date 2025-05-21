@@ -43,6 +43,10 @@ html, body {
     font-size:20px;
 }
 
+.container {
+  max-width:1400px;
+}
+
 
 h1, h2, h3, h4, h5 {
     font-size:20px;
@@ -53,12 +57,26 @@ h1, h2, h3, h4, h5 {
 }
 
 h2 {
+  margin:4rem 0;
   font-size:6em;
 }
 
 h3 {
+  font-size:4rem;
+}
+
+h4 {
   font-weight: bold;
   color:$red;
+  padding-bottom:1em;
+}
+
+.external-links a {
+  color:$red;
+
+  &:hover {
+    color:black;
+  }
 }
 
 
@@ -130,7 +148,10 @@ section.font {
     outline: none;
     text-align:center;
     line-height:1.2;
-    margin:2rem 0;
+    margin:2rem auto;
+    max-width:calc(100vw - 2rem);
+    border:1px solid $red;
+    padding:2rem;
   }
 
 
@@ -143,10 +164,21 @@ section.font {
     & label {
       display:inline;
       font-weight:normal;
+
+ 
+
     }
 
 
+    & a,
+    & a label {
+      cursor:pointer;
+      color:inherit
+    }
+
   }
+
+   
 
   button {
 
@@ -182,12 +214,18 @@ section.font {
   }
   
 
+  .process-images {
+    margin-top:3rem;
+  }
+
   .image  {
 
     margin-bottom:2rem;
 
     & img {
-      width:100%;
+      display:block;
+      margin:auto;
+      width:calc(100% - 2rem );
       
     }
   }

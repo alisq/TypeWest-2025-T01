@@ -36,6 +36,9 @@
         
         top:3px;
         content: "×";
+        position:relative;
+        height:2px;
+        // font-size:1.3em;
     }
 
     
@@ -54,7 +57,7 @@
     opacity:0;
     transition:all 0.3s;
 
-        & p, & h2 {
+        & p, & h3 {
         color:white;
       }
 
@@ -69,7 +72,8 @@
 
   
 
-      & a {
+      & a,
+      & #menu_button {
         color:white;
 
         &:link,
