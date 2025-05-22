@@ -1,0 +1,107 @@
+
+@import 'vars';
+
+a {
+  cursor:pointer;
+color:$red;   
+  &:link,
+  &:visited {
+     
+    text-decoration:none;
+  }
+  &:hover {
+    color:$black;
+  }
+
+  &.inverse {
+    color:$black;
+    &:link,
+    &:visited {
+      
+      text-decoration:none;
+    }
+    &:hover {
+      color:$red;    
+    }
+  }
+}
+
+h1, h2, h3, h4, h5 {
+    font-size:20px;
+    font-weight:normal;
+    letter-spacing:0;
+    padding:0;
+    margin:0;
+}
+
+h2 {
+  margin:4rem 0;
+  font-size:6em;
+}
+
+h3 {
+  font-size:4rem;
+}
+
+h4 {
+  font-weight: bold;
+  color:$red;
+  padding-bottom:1em;
+}
+
+.external-links a {
+  color:$red;
+
+  &:hover {
+    color:black;
+  }
+}
+
+
+
+/* Make selected text gold on a red background */
+::selection {
+    color: white;
+    background-color: #FF1C17;
+  }
+
+
+    button {
+
+    // text-align: center;
+    border-radius:0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  background:#FF1C17;
+    border:1px solid #FF1C17;
+    padding:0 0.5em;
+    color:#FFF;
+    transition: color 0.3s, background 0.3s;
+    height:auto;
+    margin:0;
+    
+    &:hover {
+        color:#FF1C17;
+        background-color: #FFF;
+    }
+
+  }
+
+
+  .left {
+    text-align: left;;
+  }
+
+  .center {
+    text-align:center;
+  }
+
+  .right {
+    text-align:right;
+  }

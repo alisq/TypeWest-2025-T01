@@ -81,14 +81,6 @@
   font-weight: Bold;
   font-style: normal;
 }
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 a {
   cursor: pointer;
   color: #FF1C17;
@@ -107,15 +99,6 @@ a.inverse:link, a.inverse:visited {
 }
 a.inverse:hover {
   color: #FF1C17;
-}
-
-html, body {
-  font-family: "Duplicate", arial, helvetica;
-  font-size: 20px;
-}
-
-.container {
-  max-width: 1400px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -154,6 +137,29 @@ h4 {
   background-color: #FF1C17;
 }
 
+button {
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  background: #FF1C17;
+  border: 1px solid #FF1C17;
+  padding: 0 0.5em;
+  color: #FFF;
+  transition: color 0.3s, background 0.3s;
+  height: auto;
+  margin: 0;
+}
+button:hover {
+  color: #FF1C17;
+  background-color: #FFF;
+}
+
 .left {
   text-align: left;
 }
@@ -164,6 +170,23 @@ h4 {
 
 .right {
   text-align: right;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: "Duplicate", arial, helvetica;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1400px;
 }
 
 .header {
@@ -229,29 +252,6 @@ section.font {
   color: inherit;
 }
 
-button {
-  border-radius: 0;
-  font-size: inherit;
-  font-weight: normal;
-  line-height: inherit;
-  letter-spacing: inherit;
-  text-transform: none;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  background: #FF1C17;
-  border: 1px solid #FF1C17;
-  padding: 0 0.5em;
-  color: #FFF;
-  transition: color 0.3s, background 0.3s;
-  height: auto;
-  margin: 0;
-}
-button:hover {
-  color: #FF1C17;
-  background-color: #FFF;
-}
-
 .view_project {
   position: absolute;
   top: 1em;
@@ -303,6 +303,30 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1em;
+}
+
+/* Larger than phablet */
+@media (max-width: 550px) {
+  section.font {
+    text-align: left;
+    position: static;
+    padding: 0.5em;
+  }
+  .metadata,
+  .view_project {
+    position: static;
+  }
+  .contain-overflow {
+    height: auto;
+  }
+  .contain-overflow .text {
+    font-size: 40px;
+    display: inline-block;
+    outline: none;
+    white-space: nowrap;
+    text-align: left;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

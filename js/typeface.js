@@ -93,7 +93,7 @@ class Typeface {
                 <a class='internal' href="#${this.authorID}"><label class="font_name">${this.title}</label> by <label class="designer_name">${this.author}</label></a>
             </div>
 
-            <a class='internal' href="#${this.authorID}"><button class="view_project">See full project</button></a>
+            
 
             <div class="contain-overflow" >
             
@@ -103,6 +103,7 @@ class Typeface {
                 </div>
         
             </div>
+            <a class='internal' href="#${this.authorID}"><button class="view_project">See full project</button></a>
         </section>`;
         return item;
     }

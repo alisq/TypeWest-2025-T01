@@ -110,7 +110,7 @@ $("#revivals_menu").click(function(){
     for (i=0;i<fonts.length;i++ ) {
       let item = new Typeface(fonts[i]);
       setTimeout(function(){
-        $("#contents").append(item.displayTeaser+"<br />").fadeIn(100)
+        $("#contents").append(item.displayTeaser).fadeIn(100)
       }, fadeSpeed)
     }
     
@@ -142,6 +142,23 @@ function loadFont(authorID) {
   },100);
 }
 
+
+$(document).on('click','.contain-overflow .text',function(){
+  var sel, range;
+	var el = $(this)[0];
+	
+	  sel = window.getSelection();
+	  if(sel.toString() == ''){ //no text selection
+		 window.setTimeout(function(){
+			range = document.createRange(); //range object
+			range.selectNodeContents(el); //sets Range
+			sel.removeAllRanges(); //remove all ranges from selection
+			sel.addRange(range);//add Range to a Selection.
+		},1);
+	  }
+	
+
+});
 
 function toVariableName(str) {
   return str
