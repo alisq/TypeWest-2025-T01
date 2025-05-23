@@ -68,9 +68,10 @@ $("#revivals_menu").click(function(){
     $("#menu_button").toggleClass("active")
     $(this).fadeOut(fadeSpeed);
     setTimeout(function(){
-      $("#revivals_menu").removeClass("active").attr("style","");
+      $("#revivals_menu").removeClass("active")
+      $("#revivals_menu").attr("style","");
 
-    },fadeSpeed)
+    },fadeSpeed+50)
 })
 
 

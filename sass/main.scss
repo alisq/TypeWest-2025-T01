@@ -158,11 +158,6 @@ p {
     }
   }
 
-  .caption {
-    font-weight:bold;
-    text-align:center;
-    
-  }
 
   .back_forth {
     display:grid;
@@ -199,4 +194,28 @@ p {
     }
   }
 
-}
+
+
+    .header {
+      display:block;
+
+
+      & .left,
+      & .center,
+      & h1{
+        display:inline;
+      }
+      & .right {
+        display:none;
+      }
+
+     & .revivals {
+        display:none;
+      }
+    }
+
+        .tester_text {
+        font-size:2rem;
+    }
+
+  }

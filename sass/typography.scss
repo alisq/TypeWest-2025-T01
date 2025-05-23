@@ -105,3 +105,25 @@ h4 {
   .right {
     text-align:right;
   }
+
+
+
+  .caption {
+    font-weight:bold;
+    text-align:center;
+    margin:0 1em;
+    
+  }
+
+  @media (max-width:550px) {
+
+    h2 {
+        font-size:3rem;
+        margin:0;
+        padding:1rem 0;
+    }
+
+
+
+
+  }

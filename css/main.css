@@ -172,6 +172,19 @@ button:hover {
   text-align: right;
 }
 
+.caption {
+  font-weight: bold;
+  text-align: center;
+  margin: 0 1em;
+}
+
+@media (max-width: 550px) {
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 1rem 0;
+  }
+}
 *,
 *::after,
 *::before {
@@ -294,11 +307,6 @@ p {
   margin: 0;
 }
 
-.caption {
-  font-weight: bold;
-  text-align: center;
-}
-
 .back_forth {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -326,6 +334,21 @@ p {
     white-space: nowrap;
     text-align: left;
     padding: 0;
+  }
+  .header {
+    display: block;
+  }
+  .header .left, .header .center, .header h1 {
+    display: inline;
+  }
+  .header .right {
+    display: none;
+  }
+  .header .revivals {
+    display: none;
+  }
+  .tester_text {
+    font-size: 2rem;
   }
 }
 
