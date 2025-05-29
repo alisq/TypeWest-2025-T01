@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TypeWest-2025-T01/static/css/main.877cbd29.css",
-    "main.js": "/TypeWest-2025-T01/static/js/main.ec076cbd.js",
+    "main.js": "/TypeWest-2025-T01/static/js/main.c705f783.js",
     "static/js/453.cdc35078.chunk.js": "/TypeWest-2025-T01/static/js/453.cdc35078.chunk.js",
     "static/media/groupPic2.jpg": "/TypeWest-2025-T01/static/media/groupPic2.44d29fda39554b5807b3.jpg",
     "static/media/DuplicateSans-Bold-Web.woff": "/TypeWest-2025-T01/static/media/DuplicateSans-Bold-Web.5a7cf29d8b3aef9faf40.woff",
@@ -9,11 +9,11 @@
     "static/media/DuplicateSans-Regular-Web.woff": "/TypeWest-2025-T01/static/media/DuplicateSans-Regular-Web.c9c5f4b4aa03803f07f9.woff",
     "index.html": "/TypeWest-2025-T01/index.html",
     "main.877cbd29.css.map": "/TypeWest-2025-T01/static/css/main.877cbd29.css.map",
-    "main.ec076cbd.js.map": "/TypeWest-2025-T01/static/js/main.ec076cbd.js.map",
+    "main.c705f783.js.map": "/TypeWest-2025-T01/static/js/main.c705f783.js.map",
     "453.cdc35078.chunk.js.map": "/TypeWest-2025-T01/static/js/453.cdc35078.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.877cbd29.css",
-    "static/js/main.ec076cbd.js"
+    "static/js/main.c705f783.js"
   ]
 }
